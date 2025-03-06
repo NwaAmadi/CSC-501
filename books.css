@@ -1,85 +1,119 @@
+/* books.css */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
 body {
-    font-family: "Gill Sans MT", Arial, sans-serif;
-    margin: 0 auto;
-    padding: 40px 20px;
-    background-color: #ffffff;
-    color: #2a2a2a;
+    font-family: 'Georgia', serif;
     line-height: 1.6;
+    background-color: #f5f5f5;
+    color: #333;
 }
 
 header {
+    background-color: #2c3e50;
+    color: white;
     text-align: center;
-    padding: 20px 0;
-    margin-bottom: 40px;
-    border-bottom: 1px solid #d0d0d0;
-    margin: 0 auto;
+    padding: 2rem 0;
+    border-bottom: 4px solid #34495e;
 }
 
-h1 {
-    font-size: 2em;
-    color: #2a2a2a;
-    margin: 0;
+header h1 {
+    font-size: 2.5rem;
     font-weight: normal;
-    letter-spacing: 0.5px;
-    text-transform: uppercase;
-}
-
-h2 a {
-    color: #2a2a2a;
-    text-decoration: none;
-    transition: color 0.3s ease;
+    letter-spacing: 1px;
 }
 
 main {
     max-width: 900px;
     margin: 0 auto;
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
-    gap: 20px;
+    padding: 2rem;
 }
 
 .book {
-    display: grid;
-    grid-template-columns: 90px 1fr;
-    align-items: start;
-    padding: 15px 0;
-    border-bottom: 1px solid #e8e8e8;
+    display: flex;
+    align-items: center;
+    background-color: white;
+    margin-bottom: 2rem;
+    padding: 1.5rem;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: box-shadow 0.3s ease;
+}
+
+.book:hover {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
 }
 
 .book img {
-    width: 90px;
-    height: 135px;
-    object-fit: cover;
-    margin-right: 20px;
+    max-width: 150px;
+    height: auto;
+    margin-right: 1.5rem;
+    border: 1px solid #ccc;
+    border-radius: 3px;
 }
 
-.book-info {
-    padding-left: 20px;
+.book-info h2 {
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
 }
 
-h2 {
-    font-size: 1.4em;
-    color: #2a2a2a;
-    margin: 0 0 8px 0;
-    font-weight: normal;
+.book-info h2 a {
+    color: #2c3e50;
+    text-decoration: none;
+    transition: color 0.3s ease;
 }
 
-p {
-    margin: 4px 0;
-    font-size: 1em;
-    color: #4a4a4a;
+.book-info h2 a:hover {
+    color: #e74c3c;
+}
+
+.book-info p {
+    font-size: 1rem;
+    margin-bottom: 0.3rem;
+}
+
+.book-info p:first-of-type {
+    font-style: italic;
+    color: #555;
 }
 
 footer {
     text-align: center;
-    padding: 20px 0;
-    font-size: 0.9em;
-    color: #6a6a6a;
-    margin-top: 40px;
-    border-top: 1px solid #d0d0d0;
-    grid-column: 1 / -1;
+    padding: 1rem;
+    background-color: #2c3e50;
+    color: white;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+    border-top: 4px solid #34495e;
 }
-a{
+
+footer a {
+    color: #ecf0f1;
     text-decoration: none;
-    color: #6a6a6a;
+}
+
+footer a:hover {
+    text-decoration: underline;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .book {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .book img {
+        margin-right: 0;
+        margin-bottom: 1rem;
+    }
+
+    header h1 {
+        font-size: 2rem;
+    }
 }
