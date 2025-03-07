@@ -72,3 +72,15 @@ a {
     text-decoration: none;
     color: #6a6a6a;
 }
+.submit button{
+    text-align: center;
+    width: 100%;
+    padding: 10px;
+    margin: 8px 0 15px 0;
+    border: 1px solid #bdc3c7;
+    border-radius: 6px;
+    box-sizing: border-box;
+    font-family: "Gill Sans MT", Arial, sans-serif;
+    font-size: 1em;
+    transition: border-color 0.3s ease;
+}

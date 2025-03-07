@@ -13,6 +13,7 @@ header {
     margin-bottom: 40px;
     border-bottom: 1px solid #d0d0d0;
     margin: 0 auto;
+    animation: fadeIn 1s ease-in-out;
 }
 
 h1 {
@@ -22,12 +23,22 @@ h1 {
     font-weight: normal;
     letter-spacing: 0.5px;
     text-transform: uppercase;
+    transition: transform 0.3s ease;
+}
+
+h1:hover {
+    transform: scale(1.05);
 }
 
 h2 a {
     color: #2a2a2a;
     text-decoration: none;
-    transition: color 0.3s ease;
+    transition: color 0.3s ease, transform 0.2s ease;
+}
+
+h2 a:hover {
+    color: #4a90e2;
+    transform: translateX(5px);
 }
 
 main {
@@ -44,17 +55,39 @@ main {
     align-items: start;
     padding: 15px 0;
     border-bottom: 1px solid #e8e8e8;
+    opacity: 0;
+    animation: fadeInUp 0.6s ease forwards;
 }
+
+/* Staggered animation delay for each book */
+.book:nth-child(1) { animation-delay: 0.1s; }
+.book:nth-child(2) { animation-delay: 0.2s; }
+.book:nth-child(3) { animation-delay: 0.3s; }
+.book:nth-child(4) { animation-delay: 0.4s; }
+.book:nth-child(5) { animation-delay: 0.5s; }
+.book:nth-child(6) { animation-delay: 0.6s; }
+.book:nth-child(7) { animation-delay: 0.7s; }
 
 .book img {
     width: 90px;
     height: 135px;
     object-fit: cover;
     margin-right: 20px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.book img:hover {
+    transform: scale(1.1); /* Slight zoom on hover */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Shadow effect */
 }
 
 .book-info {
     padding-left: 20px;
+    transition: transform 0.3s ease;
+}
+
+.book:hover .book-info {
+    transform: translateX(10px); /* Slight shift on hover */
 }
 
 h2 {
@@ -68,6 +101,11 @@ p {
     margin: 4px 0;
     font-size: 1em;
     color: #4a4a4a;
+    transition: color 0.3s ease;
+}
+
+.book:hover p {
+    color: #2a2a2a; /* Darken text on hover */
 }
 
 footer {
@@ -78,8 +116,36 @@ footer {
     margin-top: 40px;
     border-top: 1px solid #d0d0d0;
     grid-column: 1 / -1;
+    transition: color 0.3s ease;
 }
-a{
+
+footer:hover {
+    color: #4a4a4a; /* Slightly darker on hover */
+}
+
+a {
     text-decoration: none;
     color: #6a6a6a;
+    transition: color 0.3s ease;
+}
+
+a:hover {
+    color: #4a90e2; /* Blue shade for footer link */
+}
+
+/* Keyframe animations */
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
